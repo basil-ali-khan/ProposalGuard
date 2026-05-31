@@ -31,4 +31,6 @@ __pycache__/
 sample_proposals/
 .venv/
 
-*.mp4
+*.mp4.langgraph_api/
+*.png
+*.pckl
