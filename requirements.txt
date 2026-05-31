@@ -5,10 +5,10 @@ langchain-huggingface
 chromadb
 sentence-transformers
 groq
+openai
 fastapi
 uvicorn
 python-dotenv
 python-multipart
 pydantic
-anthropic
 pypdf
