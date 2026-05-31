@@ -1,11 +1,11 @@
 import json
 import os
-from groq import Groq
+from openai import OpenAI
 from langchain_core.prompts import PromptTemplate
 from src.state import GraphState
 
-_GROQ_MODEL = "llama-3.1-8b-instant"
-_groq_client = Groq(api_key=os.environ.get("GROQ_API_KEY"))
+_MODEL = "gpt-4.1-mini"
+_client = OpenAI(api_key=os.environ.get("OPENAI_API_KEY"))
 
 _EXTRACT_CLAIMS_PROMPT = PromptTemplate.from_template(
     "Extract every specific factual claim this proposal makes about the applicant's "
@@ -87,8 +87,8 @@ def verify_grounding(state: GraphState) -> dict:
     print("[Verify] Step 1 — Extracting claims from draft proposal...")
     try:
         extract_prompt = _EXTRACT_CLAIMS_PROMPT.format(proposal=proposal)
-        response = _groq_client.chat.completions.create(
-            model=_GROQ_MODEL,
+        response = _client.chat.completions.create(
+            model=_MODEL,
             temperature=0.0,
             messages=[{"role": "user", "content": extract_prompt}],
         )
@@ -123,8 +123,8 @@ def verify_grounding(state: GraphState) -> dict:
             source_text=source_text,
             claims_json=json.dumps(claims),
         )
-        response2 = _groq_client.chat.completions.create(
-            model=_GROQ_MODEL,
+        response2 = _client.chat.completions.create(
+            model=_MODEL,
             temperature=0.0,
             messages=[{"role": "user", "content": verify_prompt}],
         )

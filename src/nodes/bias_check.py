@@ -6,7 +6,7 @@ import os
 import re
 from typing import Optional
 
-from groq import Groq
+from openai import OpenAI
 from pydantic import BaseModel
 
 from src.state import GraphState
@@ -15,7 +15,7 @@ from src.nodes.generate import generate_proposal
 # ---------------------------------------------------------------------------
 # Model configuration
 # ---------------------------------------------------------------------------
-MODEL_ID = "openai/gpt-oss-20b"
+MODEL_ID = "gpt-4.1-mini"
 
 SYSTEM_PROMPT = (
     "You are a structured reasoning engine. Follow instructions exactly. "
@@ -24,11 +24,11 @@ SYSTEM_PROMPT = (
     "Think step by step before producing output."
 )
 
-_groq_client = Groq(api_key=os.environ.get("GROQ_API_KEY"))
+_openai_client = OpenAI(api_key=os.environ.get("OPENAI_API_KEY"))
 
 
 def call_model(system: str, user: str, model: str = MODEL_ID) -> str:
-    response = _groq_client.chat.completions.create(
+    response = _openai_client.chat.completions.create(
         model=model,
         temperature=0.0,
         messages=[

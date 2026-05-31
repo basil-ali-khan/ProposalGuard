@@ -1,15 +1,10 @@
 import os
-from groq import Groq
+from openai import OpenAI
 from langchain_core.prompts import PromptTemplate
 from src.state import GraphState
 
-import os
-from anthropic import Anthropic
-from langchain_core.prompts import PromptTemplate
-from src.state import GraphState
-
-_client = Anthropic(api_key=os.environ.get("ANTHROPIC_API_KEY"))
-_MODEL = "claude-sonnet-4-20250514"
+_client = OpenAI(api_key=os.environ.get("OPENAI_API_KEY"))
+_MODEL = "gpt-4.1-mini"
 
 
 def generate_proposal(state: GraphState) -> dict:
@@ -18,7 +13,7 @@ def generate_proposal(state: GraphState) -> dict:
     retry = state.get("retry_count", 0)
     feedback = state.get("human_feedback", None)
 
-    print(f"[Generate] Drafting proposal with Groq (attempt #{retry + 1})")
+    print(f"[Generate] Drafting proposal with OpenAI (attempt #{retry + 1})")
     if feedback:
         print(f"[Generate] Incorporating feedback: {feedback}")
 
@@ -75,18 +70,18 @@ def generate_proposal(state: GraphState) -> dict:
         feedback_section=feedback_section,
     )
 
-    response = _client.messages.create(
+    response = _client.chat.completions.create(
         model=_MODEL,
         max_tokens=1024,
         temperature=0.7,
         messages=[{"role": "user", "content": filled_prompt}],
     )
-    proposal_text = response.content[0].text.strip()
+    proposal_text = response.choices[0].message.content.strip()
     usage = response.usage
     token_info = {
-        "prompt_tokens": usage.input_tokens,
-        "completion_tokens": usage.output_tokens,
-        "total_tokens": usage.input_tokens + usage.output_tokens,
+        "prompt_tokens": usage.prompt_tokens,
+        "completion_tokens": usage.completion_tokens,
+        "total_tokens": usage.total_tokens,
     }
 
 

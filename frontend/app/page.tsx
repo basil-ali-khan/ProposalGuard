@@ -235,7 +235,7 @@ export default function Home() {
                   </div>
                   <input
                     type="file"
-                    accept=".txt"
+                    accept=".txt,.pdf"
                     onChange={(e) => setResumeFile(e.target.files?.[0] || null)}
                     className="block w-full text-xs text-[var(--text-dim)] file:mr-3 file:py-1.5 file:px-3 file:rounded file:border file:border-[var(--border)] file:text-xs file:font-mono file:text-[var(--text-secondary)] file:bg-[var(--bg-elevated)] file:cursor-pointer hover:file:border-[var(--border-hover)]"
                   />

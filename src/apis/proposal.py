@@ -215,11 +215,18 @@ async def upload_proposal(file: UploadFile = File(...)):
 
 @router.post("/proposals/upload_resume")
 async def upload_resume(file: UploadFile = File(...)):
-    if not file.filename.endswith(".txt"):
-        raise HTTPException(status_code=400, detail="Only .txt files supported.")
+    filename = file.filename or ""
+    if not (filename.endswith(".txt") or filename.endswith(".pdf")):
+        raise HTTPException(status_code=400, detail="Only .txt and .pdf files supported.")
     try:
         content = await file.read()
-        text_content = content.decode("utf-8")
+        if filename.endswith(".pdf"):
+            import io
+            from pypdf import PdfReader
+            reader = PdfReader(io.BytesIO(content))
+            text_content = "\n".join(page.extract_text() or "" for page in reader.pages)
+        else:
+            text_content = content.decode("utf-8")
         if not text_content.strip():
             raise HTTPException(status_code=400, detail="File is empty.")
         

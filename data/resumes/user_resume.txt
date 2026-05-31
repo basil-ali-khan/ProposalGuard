@@ -1,50 +1,52 @@
-HASSAN IQBAL
-Full-stack developer building production web apps and AI systems for founders.
-Karachi, Pakistan · hassaniqbal19343@gmail.com · https://on.contra.com/TG7Lzh
-
-
-WHAT I DO
-
-I'm the technical partner non-technical founders call when they need a real product, not a prototype. I build and ship on Next.js, TypeScript, and modern AI stacks (Claude, OpenAI, RAG). I'm strong at going from a Figma or a Bolt/Replit prototype to a production app you can actually run a business on.
-
-
-RECENT WORK
-
-Prsoo — AI coaching platform, shipped in 4 weeks
-Built on Claude API with streaming, session state, multi-turn context. The founder was non-technical. I owned every technical decision end-to-end.
-
-NestLink — Real estate SaaS rebuild, 15 weeks, 3-person team
-Took a Bolt.new prototype and rebuilt it as a production platform. Multi-tenant, Stripe billing, 4-role permissions. I managed the dev + QA team in Linear.
-
-Chronicler Labs — Lead Frontend Engineer (a16z-backed AI startup)
-Built WhatsApp AI agents alongside ex-Meta and ex-WhatsApp engineers. System held 1,000+ concurrent users with zero downtime during a viral launch (300K+ impressions overnight). Promoted twice, "Exceeds Expectations" reviews.
-
-Morti — Mortgage platform with AI document retrieval
-Built the RAG pipeline for parsing complex financial PDFs and answering borrower questions with grounded responses.
-
-
-CREDIBILITY AT A GLANCE
-
-• Top 1% on Contra with a perfect 5.0 rating across 50+ shipped projects
-• 3.5+ years of freelance experience, primarily US and European founders
-• Lead Frontend Engineer at Chronicler Labs (a16z-backed)
-• Final-year CS student at Habib University (3.80 CGPA, Dean's List)
-
-
-HOW I WORK
-
-I'm direct. I ship on milestones, not hours. I communicate in plain English.
-
-Mitch, who hired me at Prsoo, put it this way: "you stood out as being very articulate/conversational in English and had on-your-feet knowledge of the topics we talked through."
-
-I own technical decisions end-to-end so you can focus on your customers, not on reviewing pull requests you don't want to review. And because I'm still building my track record, I genuinely care about the outcome. A bad review actually costs me, something more senior between-jobs folks don't worry about.
-
-
-STACK
-
-Next.js · React · TypeScript · Tailwind · Node.js · PostgreSQL · Supabase · Stripe · Claude API · OpenAI API · RAG (LangGraph, ChromaDB) · Temporal
-
-
-HOW TO START A CONVERSATION
-
-Drop me a note at hassaniqbal19343@gmail.com or through Contra with two things: what you're trying to build, and what the next four weeks should look like. I'll come back with honest thoughts on scope and whether we're a fit.
+Basil Ali Khan
+khanbasil2002@gmail.com · +92-315-2165855 · LinkedIn · GitHub
+EDUCATION
+Habib University, Karachi Graduation: May 2026
+BS in Computer Science; Minor in Philosophy ( CGPA: 3.83 / 4.0)
+Relevant Coursework: Deep Learning, GenAI, Graph Data Science, Software Engineering, Algorithms, Ethics of AI
+PROFESSIONAL EXPERIENCE
+Associate AI Engineer Oct 2025 – Present
+TPS Worldwide
+• AIOps Impact: Reducing incident recovery time by 70% by architecting autonomous pipelines integrating log
+analysis, DB querying, and automated remediation.
+• Agentic Orchestration: Engineering scalable n8n workflows and Multi-Agent Systems using LangChain and
+LangGraph to automate complex internal operations.
+• Enterprise Architecture: Building asynchronous FastAPI-based MCP servers with Dapr microservices for secure
+LLM-driven CRUD operations while maintaining state management.
+• AI Leadership: Designing and leading AI adoption workshops for 100+ employees to integrate GenAI into
+production workflows and improve productivity across teams.
+Backend Developer Intern July 2025 – Aug 2025
+TPS Worldwide
+• Developed enterprise .NET REST APIs and optimized SQL queries to accelerate data retrieval.
+• Containerized microservices using Docker to ensure consistent cross-environment deployments.
+PROJECTS & RESEARCH
+AI-Powered Operations Agent for Payment Switch Systems September 2025 - May 2026
+• Multi-Agent Design: Architected specialized agents via LangGraph, including a Log Analysis Agent and a
+Database Agent (Vanna 2.0) to find and analyze failures in real-time.
+• Evaluation: Validated system performance against 34 production issues , achieving an average diagnostic score of
+3.5/5 using an automated LLM-as-a-Judge pipeline.
+• Self-Healing: Built a remediation workflow triggering GitHub Copilot to autonomously fix code and generate PRs,
+reducing MTTR from weeks to minutes.
+CLARITY - Unmasking Political Question Evasions SemEval-2026 Paper
+• Developed a multi-stage classification pipeline using ModernBERT and NLI, achieving 0.81 macro-F1 for clarity
+prediction; utilized MIL to isolate localized evasive cues.
+ProposalGuard - Agentic Precision in Proposal Generation Generative AI Project
+• LangGraph Architecture: Engineered a 5-node LangGraph pipeline with HITL interrupts and real-time state
+transparency streamed via Server-Sent Events (SSE).
+• Hallucination Control: Developed a Grounding Verification engine that extracts factual claims and validates
+them against source docs using a ”Circuit Breaker” mechanism (score < 0.6).
+• Bias Detection: Implemented Counterfactual A/B testing to detect demographic bias in pricing and tone,
+generating automated debiasing instructions upon threshold violations.
+Graph Data Science: Author Domain Classification and Link Prediction Graph Data Science Project
+• Engineered a Neo4j graph model for 38k+ authors; achieved 79% accuracy using FastRP embeddings and
+optimized link prediction via Node2Vec random walks.
+LEADERSHIP & ENTREPRENEURSHIP
+Founder — Ad-Duha March 2024 – Present
+Launched an international fashion brand; managed end-to-end product strategy, digital marketing, and cross-border
+logistics for Pakistan and UAE markets.
+TECHNICAL SKILLS
+• AI & Automation: LangGraph, LangChain, n8n, LangSmith, Multi-Agent Systems, RAG, LLM-as-a-Judge, NLI,
+MIL, MCP.
+• Graph & ML: Neo4j (GDS), FastRP, Node2Vec, ModernBERT, Random Forest, R, SQL.
+• Engineering: Python (Expert), FastAPI, .NET Core, Dapr, Docker, Microservices, SOLID, REST APIs.
+• Productivity: Cursor (IDE), GitHub Copilot, Claude, Azure DevOps, Git, Jira
