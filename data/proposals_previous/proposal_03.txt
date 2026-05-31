@@ -1,0 +1,35 @@
+Hello,
+
+My name is Anas, and I am a full-time freelance professional based in Pakistan (GMT+5).
+I have 4+ years of hands-on experience working remotely with international clients on Upwork-style projects.
+I am available 30-40 hours per week and can overlap with US/UK business hours.
+
+I can help you build a backend that is stable, secure, and easy to scale as your product grows.
+
+What I can deliver for your backend project:
+- API design and implementation with clear endpoint contracts.
+- Database schema design and query optimization.
+- Authentication/authorization and input validation.
+- Error handling, logging, and monitoring setup.
+- API documentation and basic test coverage.
+
+My backend stack experience includes:
+- Python (FastAPI), Node.js, PostgreSQL/MySQL, Redis.
+- Docker-based deployment workflows.
+- WebSocket and async architecture for real-time features.
+
+How I typically execute projects:
+1. Review requirements and define the API/data model.
+2. Implement core modules in milestones.
+3. Run testing and performance checks.
+4. Deliver documentation and deployment steps.
+
+I focus on maintainable code and communication, so you always know project status and next steps.
+
+If you can share your feature list and current architecture (if any), I can send a concrete implementation timeline.
+
+Thank you.
+
+Best regards,
+Anas
+Pakistan

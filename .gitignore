@@ -1,0 +1,34 @@
+venv/
+__pycache__/
+.env
+*.pyc
+.DS_Store
+# Environments
+venv/
+env/
+.env
+env
+env/*
+
+# Vector Database local storage
+chroma_db_data/
+.langraph_api/*
+.langraph_api
+*.pckl
+
+# Python Cache
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+
+# IDEs
+.vscode/
+.idea/
+.DS_Store
+
+sample_proposals/
+.venv/
+
+*.mp4
