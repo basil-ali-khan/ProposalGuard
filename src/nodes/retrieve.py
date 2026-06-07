@@ -1,7 +1,14 @@
 from src.state import GraphState
 from src.vectorStore import ProposalVectorStore
 
-vector_db = ProposalVectorStore()
+_vector_db = None
+
+
+def _get_vector_db() -> ProposalVectorStore:
+    global _vector_db
+    if _vector_db is None:
+        _vector_db = ProposalVectorStore()
+    return _vector_db
 
 
 def retrieve_context(state: GraphState) -> dict:
@@ -21,7 +28,7 @@ def retrieve_context(state: GraphState) -> dict:
 
         # Use similarity_search_with_score instead of retriever
         # This gives us the actual similarity scores for transparency
-        results_with_scores = vector_db.vector_store.similarity_search_with_score(
+        results_with_scores = _get_vector_db().vector_store.similarity_search_with_score(
             job_description, k=3
         )
 

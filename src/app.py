@@ -1,4 +1,6 @@
 import os
+os.environ.setdefault("CHROMA_ONNX_DISABLE", "1")
+
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 from src.apis.proposal import router as proposal_router

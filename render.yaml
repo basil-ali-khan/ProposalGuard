@@ -19,6 +19,8 @@ services:
         value: ProposalGuard
       - key: CHROMA_DB_PATH
         value: ./chroma_db_data
+      - key: CHROMA_ONNX_DISABLE
+        value: "1"
       - key: ALLOWED_ORIGINS
         sync: false   # set this to your frontend URL after deploying frontend
 

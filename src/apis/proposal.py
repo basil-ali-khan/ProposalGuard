@@ -195,7 +195,15 @@ def generate_proposal_sync(request: ProposalRequest):
 # -----------------------------------------------------------------------
 # Upload endpoint
 # -----------------------------------------------------------------------
-db = ProposalVectorStore()
+_upload_db = None
+
+
+def _get_upload_db() -> ProposalVectorStore:
+    global _upload_db
+    if _upload_db is None:
+        _upload_db = ProposalVectorStore()
+    return _upload_db
+
 
 @router.post("/proposals/upload")
 async def upload_proposal(file: UploadFile = File(...)):
@@ -208,7 +216,7 @@ async def upload_proposal(file: UploadFile = File(...)):
             raise HTTPException(status_code=400, detail="File is empty.")
         doc_id = str(uuid.uuid4())
         metadata = {"filename": file.filename, "source": "manual_upload", "type": "past_proposal"}
-        db.add_proposals(texts=[text_content], metadatas=[metadata], ids=[doc_id])
+        _get_upload_db().add_proposals(texts=[text_content], metadatas=[metadata], ids=[doc_id])
         return {"status": "success", "message": f"Ingested {file.filename}", "document_id": doc_id}
     except Exception as e:
         raise HTTPException(status_code=500, detail=str(e))

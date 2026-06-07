@@ -1,15 +1,17 @@
 import os
 from langchain_chroma import Chroma
-from langchain_huggingface import HuggingFaceEmbeddings
+from langchain_openai import OpenAIEmbeddings
 from src.config import Config
 
 class ProposalVectorStore:
     def __init__(self, collection_name: str = "past_proposals"):
-        """Initializes a LangChain-native ChromaDB client with free local embeddings."""
+        """Initializes a LangChain-native ChromaDB client with OpenAI embeddings."""
         
-        # 1. Initialize the free local embedding model (all-MiniLM-L6-v2)
-        # This will download an ~80MB model to your local machine on the very first run.
-        self.embeddings = HuggingFaceEmbeddings(model_name="all-MiniLM-L6-v2")
+        # 1. Initialize OpenAI embeddings — API-based, no local model/PyTorch needed.
+        self.embeddings = OpenAIEmbeddings(
+            model="text-embedding-3-small",
+            api_key=os.environ.get("OPENAI_API_KEY"),
+        )
         
         # 2. Ensure directory exists to prevent path errors
         os.makedirs(Config.CHROMA_DB_PATH, exist_ok=True)

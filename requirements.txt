@@ -1,9 +1,8 @@
 langgraph
 langchain-core
 langchain-chroma
-langchain-huggingface
+langchain-openai
 chromadb
-sentence-transformers
 groq
 openai
 fastapi
