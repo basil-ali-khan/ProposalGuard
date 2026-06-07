@@ -157,13 +157,14 @@ def token_count(text: str) -> int:
 # ---------------------------------------------------------------------------
 # Semantic similarity
 # ---------------------------------------------------------------------------
-# from sentence_transformers import SentenceTransformer
-
-# _embed_model = SentenceTransformer("all-MiniLM-L6-v2")
 
 
 def _get_embedding(text: str) -> list[float]:
-    return _embed_model.encode(text, normalize_embeddings=True).tolist()
+    response = _openai_client.embeddings.create(
+        input=text,
+        model="text-embedding-3-small",
+    )
+    return response.data[0].embedding
 
 
 def cosine_similarity(text_a: str, text_b: str) -> float:
