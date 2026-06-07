@@ -157,9 +157,9 @@ def token_count(text: str) -> int:
 # ---------------------------------------------------------------------------
 # Semantic similarity
 # ---------------------------------------------------------------------------
-from sentence_transformers import SentenceTransformer
+# from sentence_transformers import SentenceTransformer
 
-_embed_model = SentenceTransformer("all-MiniLM-L6-v2")
+# _embed_model = SentenceTransformer("all-MiniLM-L6-v2")
 
 
 def _get_embedding(text: str) -> list[float]:
